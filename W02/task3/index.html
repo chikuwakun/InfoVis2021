@@ -9,25 +9,25 @@
 <body>
 
 <input type="number" id="v1x" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v1 x">
 <input type="number" id="v1y" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v1 y">
 <input type="number" id="v1z" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v1 z">
 <input type="number" id="v2x" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v2 x">
 <input type="number" id="v2y" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v2 y">
 <input type="number" id="v2z" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v2 z">
 <input type="number" id="v3x" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v3 x">
 <input type="number" id="v3y" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v3 y">
 <input type="number" id="v3z" name="tentacles"
-       min="-100" max="100">
+       min="-100" max="100" placeholder="v3 z">
 
-<input type="button" id="sub" name="計算">
+<input type="button" id="sub" name="計算" value="計算を行う">
 
 <p id="target"></p>
 
@@ -40,50 +40,27 @@
     var gv2x,gv2y,gv2z;
     var gv3x,gv3y,gv3z;
 
-    console.log(v1x = document.getElementById('v1x'));
-    console.log(v1y = document.getElementById('v1y'));
-    v1z = document.getElementById('v1z');
-    v2x = document.getElementById('v2x');
-    v2y = document.getElementById('v2y');
-    v2z = document.getElementById('v2z');
-    v3x = document.getElementById('v3x');
-    v3y = document.getElementById('v3y');
-    v3z = document.getElementById('v3z');
-
-    v1x.addEventListener('input', (event) =>{
-        gv1x = event.target.valueOf();
-    })
-    v1y.addEventListener('input', (event) =>{
-        gv1y = event.target.valueOf();
-    })
-    v1z.addEventListener('input', (event) =>{
-        gv1z = event.target.valueOf();
-    })
-
-    v2x.addEventListener('input', (event) =>{
-        gv2x = event.target.valueOf();
-    })
-    v2y.addEventListener('input', (event) =>{
-        gv2y = event.target.valueOf();
-    })
-    v2z.addEventListener('input', (event) =>{
-        gv2z = event.target.valueOf();
-    })
-
-    v3x.addEventListener('input', (event) =>{
-        gv3x = event.target.valueOf();
-    })
-    v3y.addEventListener('input', (event) =>{
-        gv3y = event.target.valueOf();
-    })
-    v3z.addEventListener('input', (event) =>{
-        gv3z = event.target.valueOf();
-    })
 
     var element = document.getElementById('sub').addEventListener('click',(event) => {
+
+
+        console.log(v1x = document.getElementById('v1x').value);
+        console.log(v1y = document.getElementById('v1y').value);
+        v1z = document.getElementById('v1z').value;
+        v2x = document.getElementById('v2x').value;
+        v2y = document.getElementById('v2y').value
+        v2z = document.getElementById('v2z').value;
+        v3x = document.getElementById('v3x').value;
+        v3y = document.getElementById('v3y').value
+        v3z = document.getElementById('v3z').value;
+
         var v1 = new Vec3(v1x,v1y,v1z);
         var v2 = new Vec3(v2x,v2y,v2z);
         var v3 = new Vec3(v3x,v3y,v3z);
+
+        console.log(v1);
+        console.log(v2);
+        console.log(v3);
 
         var men = Vec3.AreaOfTriangle(v1,v2,v3);
 
