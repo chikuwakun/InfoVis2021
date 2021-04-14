@@ -68,7 +68,7 @@ class Vec3
         console.log(a);
         console.log(b);
 
-        return (Math.sqrt(Math.pow(this.dist(v1,v2),2) + Math.pow(this.dist(v2,v3),2) - this.naiseki(a,b))/2);
+        return (Math.sqrt(Math.pow(this.dist(v1,v2),2)* Math.pow(this.dist(v2,v3),2) - Math.pow(this.naiseki(a,b), 2))/2);
 
     }
 
