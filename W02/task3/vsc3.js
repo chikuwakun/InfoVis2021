@@ -65,6 +65,8 @@ class Vec3
     static AreaOfTriangle(v1,v2,v3){
         var a = Vec3.sabun(v1,v2);
         var b = Vec3.sabun(v2,v3);
+        console.log(a);
+        console.log(b);
 
         return (Math.sqrt(Math.pow(this.dist(v1,v2),2) + Math.pow(this.dist(v2,v3),2) - this.naiseki(a,b))/2);
 
