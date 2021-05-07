@@ -91,12 +91,29 @@ class ScatterPlot {
             .attr("cx", d => self.xscale( d.x ) )
             .attr("cy", d => self.yscale( d.y ) )
             .attr("r", d => d.r );
-            //.attr('transform', `translate(${this.config.margin.left}, ${this.config.margin.top})`)
+        //.attr('transform', `translate(${this.config.margin.left}, ${this.config.margin.top})`)
 
         self.xaxis_group
-            .call( self.xaxis );
+            .call( self.xaxis )
+            .append("text")
+            .attr("fill", "black")
+            .attr("x", this.inner_width/2 )
+            .attr("y", 35)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "10pt")
+            .attr("font-weight", "middle")
+            .text("X");
 
         self.yaxis_group
-            .call( self.yaxis);
+            .call( self.yaxis)
+            .append("text")
+            .attr("fill", "black")
+            .attr("text-anchor", "middle")
+            .attr("x", -this.inner_height /2)
+            .attr("y", -30)
+            .attr("transform", "rotate(-90)")
+            .attr("font-weight", "middle")
+            .attr("font-size", "12pt")
+            .text("y");
     }
 }
